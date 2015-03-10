@@ -1,0 +1,16 @@
+{
+  "name": "vesti-ru-mobile-video",
+  "fullName": "Vesti.ru mobile video",
+  "description": "Расширение изменяет ссылку на видео, чтобы оно открывалось на мобильных устройствах без flash-проигрывателя",
+
+  "author": "prrt714 <prrt714@gmail.com>",
+  "contributors": [],
+
+  "id": "vesti-ru-mobile-video",
+  "version": "0.0.1",
+  "lib": "lib",
+  "main": "main",
+  "license": "bsd",
+  "url": "https://github.com/prrt714/vesti-ru-mobile-video",
+  "dependencies": ["api-utils", "addon-kit"]
+}
