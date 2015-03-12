@@ -13,6 +13,8 @@ let debounce = function (fn, timeout, invokeAsap) {
   };
 };
 
+let quality;
+
 let scanAndModify = debounce(function () {
   var article = document.querySelector(".article");
   if (!article) return;
@@ -25,12 +27,19 @@ let scanAndModify = debounce(function () {
   docId = share.getAttribute("data-yasharelink").match(regex);
   if (!docId) return;
   docId = docId[1];
-  videoLink.href = "http://mobile.vesti.ru/v/" + docId + "." + self.options.quality + ".mp4";
+  videoLink.href = "http://mobile.vesti.ru/v/" + docId + "." + quality + ".mp4";
   videoLink.removeAttribute("data-video-url");
   videoLink.removeAttribute("data-video-type");
   videoLink.setAttribute("target", "_blank");
-}, 100, true);
+}, 500, false);
 
 let observer = new MutationObserver(scanAndModify);
 
-observer.observe(document, { childList: true, subtree: true });
+self.port.on("detach", function () {
+  observer.disconnect();
+});
+
+self.port.on("attached", function (prefs) {
+  quality = prefs.quality;
+  observer.observe(document, { childList: true, subtree: true });
+});

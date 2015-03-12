@@ -7,25 +7,27 @@
   "contributors": [],
 
   "id": "vesti-ru-mobile-video",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "lib": "lib",
   "main": "main",
   "license": "bsd",
-  "preferences": [{
-    "name": "quality",
-    "type": "menulist",
-    "title": "Quality",
-    "value": "480",
-    "options": [
-      {
-        "value": "480",
-        "label": "480"
-      },
-      {
-        "value": "240",
-        "label": "240"
-      }
-    ]
-  }],
+  "preferences": [
+    {
+      "name": "quality",
+      "type": "menulist",
+      "title": "Quality",
+      "value": 480,
+      "options": [
+        {
+          "value": "480",
+          "label": "480"
+        },
+        {
+          "value": "240",
+          "label": "240"
+        }
+      ]
+    }
+  ],
   "url": "https://github.com/prrt714/vesti-ru-mobile-video"
 }
